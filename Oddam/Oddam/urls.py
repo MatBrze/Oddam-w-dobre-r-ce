@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from oddam.views import MainView, RegisterView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', MainView.as_view(), name='index'),
+    path('register/', RegisterView.as_view(), name='register')
 ]
